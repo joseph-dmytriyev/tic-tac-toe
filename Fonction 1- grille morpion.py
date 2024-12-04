@@ -11,10 +11,13 @@ tab = [[" " for _ in range(3)] for _ in range(3)]
 def board_morp(tab):
     length_tab = len(tab)  # Size of the board (3)
     # Printing the top border line
-    print("+" + "---+" * n)
-    for rows in range(3):  # Loop through the rows of the board
-        print(f"| {tab[rows][0]} | {tab[rows][1]} | {tab[rows][2]} |")  # Display each cell
-        if rows < 2:  # Horizontal separator lines between rows
-            print("|---+---+---|")
+    print("    0   1   2")
+    print("+" + "---+" * length_tab)
+    line_number=0
+    for line in range(3):  # Loop through the rows of the board
+        print(f"{line_number} | {tab[line][0]} | {tab[line][1]} | {tab[line][2]} |")  # Display each cell
+        if line < 2:  # Horizontal separator lines between rows
+            print("  " "|---+---+---|")
+        line_number+=1
     # Printing the bottom border line
     print("+" + "---+" * length_tab)
